@@ -3,9 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const dishRouter = express.Router(); /*Instanzierung eines Express-Routers mit dem Namen dishRouter */
+const dishRouter = express.Router(); 
 
-dishRouter.use(bodyParser.json()); /* der dishRouter nutzt den bodyParser*/
+dishRouter.use(bodyParser.json()); 
 
 // Route ('/')
 
@@ -13,7 +13,7 @@ dishRouter.route('/')
 .all((req, res, next) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    next(); /* bezieht sich hier zuerst auf app.get('/dishes') und wenn app.get() ausgeführt wurde auf app.post('/dishes') */
+    next(); 
 })
 .get((req, res, next) => {
     res.end("Will send all the dishes to you!");
